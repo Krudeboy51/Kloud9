@@ -28,18 +28,18 @@ import java.util.Map;
  * Created by Krudeboy on 9/29/2017.
  */
 
-public class UserRequest<UserModel> extends Request<UserModel> {
+public class UserRequest<T> extends Request<T> {
 
     private final Gson gson;
-    private final Class<UserModel> clazz;
+    private final Class<T> clazz;
     private final JSONObject params;
-    private final Response.Listener<UserModel> listener;
+    private final Response.Listener<T> listener;
     private userDBHelper db;
     private Context context;
 
     public UserRequest(int method,
                        String url,
-                       Class<UserModel> c,
+                       Class<T> c,
                        JSONObject p,
                        Context con,
                        Response.ErrorListener elistener,
@@ -72,7 +72,7 @@ public class UserRequest<UserModel> extends Request<UserModel> {
     }
 
     @Override
-    protected Response<UserModel> parseNetworkResponse(NetworkResponse response) {
+    protected Response<T> parseNetworkResponse(NetworkResponse response) {
         try {
             JSONObject userObj = new JSONObject();
             String json = new String(
@@ -95,8 +95,9 @@ public class UserRequest<UserModel> extends Request<UserModel> {
         }
     }
 
+
     @Override
-    protected void deliverResponse(UserModel response) {
+    protected void deliverResponse(T response) {
         listener.onResponse(response);
     }
 }

@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +17,8 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import com.example.krudeboy.kloud9.dataHandler.UserHandler;
+
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,9 +39,26 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-                //user.register("12345678@123.com","12345678");
-                user.userLogin("12345678@123.com","12345678");
-                user.isLoggedin();
+               // user.register("1234567893@123.com","12345678");
+             //   user.userLogin("12345678@123.com", "12345678", new UserHandler.callback() {
+                //    @Override
+                 //   public void onSuccess(boolean success, String res) {
+                Log.i("LOGGING IN", "TRUE");
+                        user.userLogOut(new UserHandler.callback() {
+
+                            @Override
+                            public void onSuccess(boolean success, String res) {
+                                Log.i("USER LOGGED OUT", res);
+                            }
+                        });
+                 //   }
+              //  });
+//                user.isLoggedin(new UserHandler.callback() {
+//                    @Override
+//                    public void onSuccess(boolean success, String res) {
+//                        Log.i(success+"", res);
+//                    }
+//                });
             }
         });
     }
