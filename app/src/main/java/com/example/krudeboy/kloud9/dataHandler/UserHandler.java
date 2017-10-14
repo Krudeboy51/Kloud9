@@ -110,6 +110,8 @@ public class UserHandler {
 
                         Log.i("AUTH TOKEN", mResponse);
                         Log.i("EMAIL", response.getEmail()+mResponse);
+
+                        c.onSuccess(true, "Login successful!!");
                     }
                 });
 

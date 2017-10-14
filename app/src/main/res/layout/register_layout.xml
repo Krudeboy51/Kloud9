@@ -8,10 +8,9 @@
     tools:context="com.example.krudeboy.kloud9.screens.MainActivity"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal">
-    <!--tools:showIn="@layout/activity_main">-->
 
     <EditText
-        android:id="@+id/log_email"
+        android:id="@+id/reg_email"
         android:background="@drawable/textview_design"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +23,20 @@
         android:layout_gravity="center"/>
 
     <EditText
-        android:id="@+id/log_pwd"
+        android:id="@+id/reg_pwd"
+        android:background="@drawable/textview_design"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/pass_hint"
+        android:textSize="18sp"
+        android:inputType="textPassword"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/reg_cpwd"
         android:background="@drawable/textview_design"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -44,7 +56,7 @@
         android:layout_gravity="center">
 
         <Button
-            android:id="@+id/log_login_btn"
+            android:id="@+id/reg_login_btn"
             android:background="@drawable/rounded_btn"
             android:textColor="#fff"
             android:layout_width="wrap_content"
@@ -55,7 +67,7 @@
             android:textAllCaps="false"/>
 
         <Button
-            android:id="@+id/log_reg_btn"
+            android:id="@+id/reg_reg_btn"
             android:background="@drawable/rounded_btn"
             android:textColor="#fff"
             android:layout_width="wrap_content"
@@ -66,7 +78,5 @@
             android:textAllCaps="false"/>
 
     </LinearLayout>
-
-
 
 </LinearLayout>
